@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://formbuilder-v1.onrender.com';
+const API_BASE_URL = 'https://formbuilder-v1.onrender.com/api/forms';
 
 export const formService = {
   async createForm(formData) {
