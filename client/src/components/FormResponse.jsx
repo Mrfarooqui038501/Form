@@ -7,16 +7,16 @@ const FormResponse = ({ formId }) => {
     useEffect(() => {
         const fetchForm = async () => {
             try {
-                // Check if you need to use a full URL (if API is on a different port)
-                const apiUrl = `http://localhost:5000/api/forms/${formId}`; // Example URL
+               
+                const apiUrl = `http://localhost:5000/api/forms/${formId}`; 
                 const response = await fetch(apiUrl);
-                // Log the raw response for debugging
+               
                 const textResponse = await response.text();
-                console.log("Server Response:", textResponse); // Log the raw response
+                console.log("Server Response:", textResponse); 
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} - ${textResponse}`);
                 }
-                // Try parsing the response as JSON manually
+               
                 const data = JSON.parse(textResponse);
                 setForm(data);
                
@@ -100,7 +100,7 @@ const FormResponse = ({ formId }) => {
         return <div className="text-red-500">Error: {error}</div>;
     }
     if (!form) {
-        return <div>Loading...</div>; // Show loading state while fetching
+        return <div>Loading...</div>; 
     }
     return (
         <div className="container mx-auto p-6">
