@@ -18,8 +18,8 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.error('MongoDB Connection Error:', err));
 // Routes
-const formRoutes = require('./routes/formRoutes'); // Ensure the correct path
-app.use('/api/forms', formRoutes); // Mount the routes correctly
+const formRoutes = require('./routes/formRoutes'); 
+app.use('/api/forms', formRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port${process.env.PORT}`);
 });
