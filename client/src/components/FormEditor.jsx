@@ -38,18 +38,18 @@ const FormEditor = () => {
     }
     questions.forEach((question, index) => {
         if (question.image) {
-            formData.append(`questions[${index}][image]`, question.image); // Correctly append question image
+            formData.append(`questions[${index}][image]`, question.image); 
         }
-        // Append question details as a stringified JSON
+       
         formData.append(`questions[${index}]`, JSON.stringify({
             ...question,
-            index  // Add index for backend processing
+            index  
         }));
     });
     try {
         const response = await formService.createForm(formData);
         console.log('Form created:', response);
-        // Reset form after successful submission
+       
         setFormTitle('');
         setHeaderImage(null);
         setQuestions([]);
