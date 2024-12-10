@@ -5,14 +5,13 @@ export const formService = {
     try {
         const response = await fetch(`${API_BASE_URL}/create`, {
             method: 'POST',
-            body: formData  // Directly pass FormData without setting headers
+            body: formData  
         });
         if (!response.ok) {
-            const errorText = await response.text(); // Read the response text only if not ok
+            const errorText = await response.text(); 
             throw new Error(errorText || 'Failed to create form');
         }
-        return await response.json(); // Read the response JSON only if ok
-    } catch (error) {
+        return await response.json(); 
         console.error('Form creation error:', error);
         throw error;
     }
